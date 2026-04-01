@@ -114,8 +114,17 @@ nav a:hover { color: var(--ink); }
 .hero .sub {
   max-width: 560px;
   font-size: 1.1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
 }
+
+.hero .sub:last-of-type { margin-bottom: 2.5rem; }
+
+.inline-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.inline-link:hover { color: var(--accent); }
 
 /* ── CTA button ───────────────────────────────────────── */
 .cta {
@@ -138,12 +147,6 @@ nav a:hover { color: var(--ink); }
   gap: 3rem;
 }
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
 /* ── Cards ────────────────────────────────────────────── */
 .card {
   border-top: 2px solid var(--ink);
@@ -163,7 +166,7 @@ footer span {
 
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 680px) {
-  .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 2rem; }
+  .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
   nav { gap: 1.25rem; }
   .hero { padding: 4rem 0; }
   section { padding: 3.5rem 0; }
