@@ -1,0 +1,170 @@
+/* ── Reset & base ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #f9f9f7;
+  --bg-alt:   #f1f1ed;
+  --ink:      #111110;
+  --ink-mid:  #44443f;
+  --ink-light:#88887f;
+  --accent:   #2a52c9;
+  --border:   #ddddd8;
+  --radius:   4px;
+  --font:     'Inter', system-ui, -apple-system, sans-serif;
+  --mono:     'JetBrains Mono', 'Fira Mono', monospace;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ───────────────────────────────────────────── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section { padding: 5rem 0; }
+section.alt { background: var(--bg-alt); }
+
+/* ── Typography ───────────────────────────────────────── */
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-light);
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+p { color: var(--ink-mid); margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+.section-sub {
+  max-width: 580px;
+  font-size: 1.05rem;
+}
+
+/* ── Header ───────────────────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+nav { display: flex; gap: 2rem; }
+
+nav a {
+  font-size: 0.875rem;
+  color: var(--ink-mid);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+nav a:hover { color: var(--ink); }
+
+/* ── Hero ─────────────────────────────────────────────── */
+.hero { padding: 7rem 0 6rem; }
+
+.location {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-light);
+  margin-bottom: 1.5rem;
+  font-family: var(--mono);
+}
+
+.hero .sub {
+  max-width: 560px;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── CTA button ───────────────────────────────────────── */
+.cta {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.cta:hover { background: var(--accent); }
+
+/* ── Grids ────────────────────────────────────────────── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ── Cards ────────────────────────────────────────────── */
+.card {
+  border-top: 2px solid var(--ink);
+  padding-top: 1.25rem;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+footer span {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 680px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 2rem; }
+  nav { gap: 1.25rem; }
+  .hero { padding: 4rem 0; }
+  section { padding: 3.5rem 0; }
+}
