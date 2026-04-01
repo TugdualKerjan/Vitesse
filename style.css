@@ -153,6 +153,40 @@ nav a:hover { color: var(--ink); }
   padding-top: 1.25rem;
 }
 
+/* ── Font preview (temporary) ──────────────────────── */
+.font-preview {
+  border-top: 2px dashed var(--border);
+  background: var(--bg);
+}
+
+.font-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.font-sample {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.sample-name {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+  font-family: var(--mono);
+  letter-spacing: 0.05em;
+}
+
+.sample-logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
 /* ── Footer ───────────────────────────────────────────── */
 footer {
   border-top: 1px solid var(--border);
@@ -166,7 +200,8 @@ footer span {
 
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 680px) {
-  .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 2rem; }
+  .font-grid { grid-template-columns: 1fr 1fr; }
   nav { gap: 1.25rem; }
   .hero { padding: 4rem 0; }
   section { padding: 3.5rem 0; }
